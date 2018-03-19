@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ApacheBatik
+Bundle-SymbolicName: Batik
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.apache.batik.dom,
+ org.apache.batik.ext.awt.g2d,
+ org.apache.batik.svggen

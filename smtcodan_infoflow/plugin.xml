@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="4.0"?>
+<plugin>
+
+   <!--checker extension point -->
+   <extension
+         point="org.eclipse.cdt.codan.core.checkers">
+      <checker
+            class="smtcodan.WorkPoolManager"
+            id="smtcodan.checkers.mypsproblem"
+            name="Path Sensitive Checkers">
+          <problem
+                  id="smtcodan.checkers.mypsproblem"
+                  name="My path sensitive problem"
+                  category=""
+                  description="path sensitive problem description"
+		          defaultSeverity="Warning"
+		          defaultEnabled="true"/>
+		          
+      </checker>
+   </extension>
+   
+   <!--problemDetails extension point -->
+   <extension
+         point="org.eclipse.cdt.codan.ui.codanProblemDetails">
+      <problemDetails
+      		class="smtcodan.checkers.BoundErrorHelp"
+            problemId="smtcodan.checkers.mypsproblem">
+      </problemDetails>
+   </extension>
+   
+   <!--parser extension point-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.xtext.org/example/mydsl/MyDsl" 
+       class = "org.xtext.example.mydsl.myDsl.MyDslPackage"
+       genModel = "model/generated/MyDsl.genmodel" /> 
+  </extension>
+ </plugin>

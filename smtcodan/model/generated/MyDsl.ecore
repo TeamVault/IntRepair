@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/example/mydsl/MyDsl" nsPrefix="myDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationLanguage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//HeaderModel" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HeaderModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="headers" upperBound="-1"
+        eType="#//SingleLineAnnotation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition" eSuperTypes="#//HeaderModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute_def" upperBound="-1"
+        eType="#//SYMBOLS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extension" upperBound="-1"
+        eType="#//KeyWord" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extension_2" upperBound="-1"
+        eType="#//Ref" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ref" eSuperTypes="#//IDSpace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodHeader" eSuperTypes="#//HeaderModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name1" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exp" upperBound="-1" eType="#//Ref"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name2" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name3" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name4" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name5" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name6" eType="#//SYMBOLS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IDSpace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Ref" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//SpecialExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecialExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpaceID">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expr" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultilineAnnotation" eSuperTypes="#//HeaderModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionAnnotation" eType="#//FunctionAnnotation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name1" eType="#//SYMBOLS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionAnnotation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionType" eType="#//FunctionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityType" eType="#//SecurityType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name1" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name2" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name3" eType="#//SYMBOLS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleLineAnnotation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionType" eType="#//FunctionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityType" eType="#//SecurityType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name1" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name2" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name3" eType="#//SYMBOLS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AnnotationType">
+    <eLiterals name="function" literal="function"/>
+    <eLiterals name="parameter" value="1" literal="parameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FunctionType">
+    <eLiterals name="declasification" literal="declasification"/>
+    <eLiterals name="sanitisation" value="1" literal="sanitisation"/>
+    <eLiterals name="sink" value="2" literal="sink"/>
+    <eLiterals name="source" value="3" literal="source"/>
+    <eLiterals name="trust_boundary" value="4" literal="trust_boundary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SecurityType">
+    <eLiterals name="confidential" literal="confidential"/>
+    <eLiterals name="sensitive" value="1" literal="sensitive"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyWord">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SYMBOLS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbols" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//KeyWord"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attr" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name2" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name4" eType="#//SYMBOLS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Ref">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Ref" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbols_attr" upperBound="-1"
+        eType="#//SYMBOLS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tail" eType="#//Ref" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbols" upperBound="-1"
+        eType="#//SYMBOLS" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRef" eSuperTypes="#//Ref">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
+        eType="#//SpecialExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//SpecialExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rules" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name0" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name1" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name2" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name3" eType="#//SYMBOLS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name4" eType="#//SYMBOLS"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

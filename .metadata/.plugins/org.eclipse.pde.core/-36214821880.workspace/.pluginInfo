@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="659" class="smtcodan.Activator" localization="OSGI-INF/l10n/bundle" name="andreas.checkers" project="smtcodan"/>
+	<bundle bundleID="660" localization="OSGI-INF/l10n/bundle" name="Jung" project="Jung">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="661" localization="OSGI-INF/l10n/bundle" name="ApacheBatik" project="Batik"/>
+</map>

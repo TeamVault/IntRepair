@@ -1,0 +1,83 @@
+/**
+   [Class description.  The class models the c function call  int atoi(const char *nptr);]
+   
+   [Other notes. -]
+   
+   @author Andreas Ibing
+   @version $Revision: x  Date: x hour: 
+**/
+package smtcodan.environment;
+
+import org.eclipse.cdt.core.dom.IName;
+
+import smtcodan.interpreter.Interpreter;
+import smtcodan.symvars.SymFctSignature;
+import smtcodan.symvars.SymFunctionCall;
+import smtcodan.symvars.SymFunctionReturn;
+import smtcodan.symvars.SymIntOrig;
+import smtcodan.symvars.SymVarSSA;
+import smtcodan.symvars.eSymType;
+
+/**
+ * The Class Matoi. 
+ */
+public class Msocket implements IFctModel {
+
+	// int atoi(const char *nptr);
+	
+	/** The ps. */
+	Interpreter ps;
+	
+	/**
+	 * Instantiates a new matoi.
+	 *
+	 * @param ps the ps interpreter
+	 */
+	public Msocket(Interpreter ps) {
+		this.ps = ps;
+	}
+	
+	/* (non-Javadoc)
+	 * @see smtcodan.environment.IFctModel#getName()
+	 */
+	@Override
+	public String getName() {
+		return "socket";
+	}
+
+	/* (non-Javadoc)
+	 * @see smtcodan.environment.IFctModel#exec(smtcodan.symvars.SymFunctionCall)
+	 */
+	/**
+	 * the exec method is called in order to get the function return value
+	 */
+	@Override
+	public SymFunctionReturn exec(SymFunctionCall call) {
+		IName newName = new EnvVarName();
+		ps.declareLocal(eSymType.SymInt, newName);
+		SymVarSSA var = ps.getLocalOrigSymInt(newName).getCurrentSSACopy();
+		String formula = new String("(assert ( = "+ var.getSSAName() +" "+"6"+" ))") ;
+		StringBuffer sformula = new StringBuffer();
+		sformula.append(formula);
+		var.setFormula(sformula.toString());
+		return new SymFunctionReturn(var);
+	}
+
+	/* (non-Javadoc)
+	 * @see smtcodan.environment.IFctModel#getSignature()
+	 */
+	/**
+	 * returns the function signature
+	 */
+	@Override
+	public SymFctSignature getSignature() {
+		SymFctSignature fsign = new SymFctSignature();
+		fsign.addParam(new SymIntOrig());
+		fsign.addParam(new SymIntOrig());
+		fsign.addParam(new SymIntOrig());
+		
+		fsign.setRType(new SymIntOrig());
+		return fsign;
+	}
+
+}

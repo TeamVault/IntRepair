@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="4.0"?>
+<plugin>
+
+<!--Extension point for SymbolicExecutionEngine, checker, class-->
+   <!--checker extension point -->
+   <extension
+         point="org.eclipse.cdt.codan.core.checkers">
+      <checker
+            class="smtcodan.WorkPoolManager"
+            id="smtcodan.checkers.mypsproblem"
+            name="Path Sensitive Checkers">
+          <problem
+                defaultSeverity="Warning"
+                description="path sensitive problem description"
+                id="smtcodan.checkers.mypsproblem"
+                name="My path sensitive problem">
+          </problem>
+      </checker>
+   </extension>
+
+
+<!--Extension point for BoundErrorHelp class-->
+   <!--problemDetails extension point -->
+
+   <extension
+         point="org.eclipse.cdt.codan.ui.codanProblemDetails">
+      <problemDetails
+              class="smtcodan.checkers.BoundErrorHelp"
+            problemId="smtcodan.checkers.mypsproblem">
+      </problemDetails>
+   </extension>
+
+<!--Extension point for QuickFixBufferOverflow class-->
+   <extension
+         point="org.eclipse.cdt.codan.ui.codanMarkerResolution">
+      <resolution
+            class="smtcodan.quickfixes.integer.overflow.QuickFixIntegerOverflow"
+            problemId="smtcodan.checkers.mypsproblem">
+      </resolution>
+   </extension>
+
+   <!--Extension point for QuickFixRaceCondition class-->
+   <extension
+         point="org.eclipse.cdt.codan.ui.codanMarkerResolution">
+      <resolution
+            class="smtcodan.quickfixes.race.condition.QuickFixRaceCondition"
+            problemId="smtcodan.checkers.mypsproblem">
+      </resolution>
+   </extension>
+   
+    <!--Extension point for QuickFixInformationExposure class-->
+   <extension
+         point="org.eclipse.cdt.codan.ui.codanMarkerResolution">
+      <resolution
+            class="smtcodan.quickfixes.information.exposure.QuickFixInformationExposure"
+            problemId="smtcodan.checkers.mypsproblem">
+      </resolution>
+   </extension>
+
+
+<!--Refactoring extension points-->
+  <!--Commands extension point-->
+  <extension
+         point="org.eclipse.ui.commands">
+      <command
+defaultHandler="smtcodan.quickfixes.introduceimpl.actions.IntroduceBufferOverflowActionHandler"
+            description="Buffer Overflow Refactoring"
+            id="smtcodan.checkers.mypsproblem"
+            name="Buffer Overflow Function">
+      </command>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+defaultHandler="smtcodan.quickfixes.introduceimpl.actions.IntroduceRaceConditionActionHandler"
+            description="Race Condition Refactoring"
+            id="smtcodan.checkers.mypsproblem"
+            name="Race Condition Function">
+      </command>
+   </extension>
+   
+     <extension
+         point="org.eclipse.ui.commands">
+      <command
+defaultHandler="smtcodan.quickfixes.introduceimpl.actions.IntroduceInformationExposureActionHandler"
+            description="Information Exposure Refactoring"
+            id="smtcodan.checkers.mypsproblem"
+            name="Information Exposure Function">
+      </command>
+   </extension>
+
+   <!--Handlers extension point-->
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+class="smtcodan.quickfixes.introduceimpl.actions.IntroduceBufferOverflowActionHandler"
+            commandId="smtcodan.checkers.mypsproblem1">
+         <enabledWhen>
+            <with
+                  variable="activePartId">
+               <equals
+                     value="org.eclipse.cdt.ui.editor.CEditor">
+               </equals>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+class="smtcodan.quickfixes.introduceimpl.actions.IntroduceRaceConditionActionHandler"
+            commandId="smtcodan.checkers.mypsproblem2">
+         <enabledWhen>
+            <with
+                  variable="activePartId">
+               <equals
+                     value="org.eclipse.cdt.ui.editor.CEditor">
+               </equals>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+   
+      <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+class="smtcodan.quickfixes.introduceimpl.actions.IntroduceInformationExposureActionHandler"
+            commandId="smtcodan.checkers.mypsproblem3">
+         <enabledWhen>
+            <with
+                  variable="activePartId">
+               <equals
+                     value="org.eclipse.cdt.ui.editor.CEditor">
+               </equals>
+            </with>
+         </enabledWhen>
+      </handler>
+   </extension>
+
+   <!--Menus extension point-->
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+locationURI="menu:org.eclipse.ui.main.menu?after=edit">
+         <menu
+               id="org.eclipse.jdt.ui.refactoring.menu"
+               label="Refactor">
+            <command
+                  commandId="smtcodan.checkers.mypsproblem1"
+                  id="smtcodan.checkers.mypsproblem"
+                  label="Buffer Overflow Refactoring"
+                  style="push"
+                  tooltip="Buffer Overflow Refactoring">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="true"
+locationURI="popup:org.eclipse.cdt.ui.refactoring.menu?after=additions">
+         <command
+               commandId="smtcodan.checkers.mypsproblem1"
+               id="smtcodan.checkers.mypsproblem"
+               label="Buffer Overflow Refactoring"
+               style="push"
+               tooltip="Buffer Overflow Refactoring">
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+locationURI="menu:org.eclipse.ui.main.menu?after=edit">
+         <menu
+               id="org.eclipse.jdt.ui.refactoring.menu"
+               label="Refactor">
+            <command
+                  commandId="smtcodan.checkers.mypsproblem2"
+                  id="smtcodan.checkers.mypsproblem"
+                  label="Race Condition Refactoring"
+                  style="push"
+                  tooltip="Race Condition Refactoring">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="true"
+locationURI="popup:org.eclipse.cdt.ui.refactoring.menu?after=additions">
+         <command
+               commandId="smtcodan.checkers.mypsproblem2"
+               id="smtcodan.checkers.mypsproblem"
+               label="Race Condition Refactoring"
+               style="push"
+               tooltip="Race Condition Refactoring">
+         </command>
+      </menuContribution>
+   </extension>
+
+<extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+locationURI="menu:org.eclipse.ui.main.menu?after=edit">
+         <menu
+               id="org.eclipse.jdt.ui.refactoring.menu"
+               label="Refactor">
+            <command
+                  commandId="smtcodan.checkers.mypsproblem3"
+                  id="smtcodan.checkers.mypsproblem"
+                  label="Information Exposure Refactoring"
+                  style="push"
+                  tooltip="Information Exposure Refactoring">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="true"
+locationURI="popup:org.eclipse.cdt.ui.refactoring.menu?after=additions">
+         <command
+               commandId="smtcodan.checkers.mypsproblem3"
+               id="smtcodan.checkers.mypsproblem"
+               label="Information Exposure Refactoring"
+               style="push"
+               tooltip="Information Exposure Refactoring">
+         </command>
+      </menuContribution>
+   </extension>
+   <!--parser extension point-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.xtext.org/example/mydsl/MyDsl"
+       class = "org.xtext.example.mydsl.myDsl.MyDslPackage"
+       genModel = "model/generated/MyDsl.genmodel" />
+  </extension>
+
+ </plugin>

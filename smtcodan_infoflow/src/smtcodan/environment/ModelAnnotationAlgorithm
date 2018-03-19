@@ -1,0 +1,29 @@
+1. Currently: Mgetenv, Mprintf, Mfprintf, Mfwprintf, MLogonUserA and MLogonUserW are annotated
+Theyr headr definitions are contained in the virtual folder Standard_C_Library_Headers and in windows_dummy.h
+
+
+2. Model annotation algorithm:
+	//create a comment object from getLibrarySignature
+		//see if is single or multiline comment in the map containg such a key
+		//@if single get the list from AnnotationParser getSingleLineComment
+		  //say something about one paramter or about the function
+		  //if it is about one param then this param from index i needs to be set to conf or sensitive
+		  //if it is about the function then the interpreter has to be notified with one of the parameters
+		  //which parameter is still open the function annotation needs a parameter to be added
+		//$else get two lists in two separate lists
+		  //list1=AnnotationParser getMultilineFunctionComment
+		  //list2=AnnotationParser getMultilineParameterComment
+		  //if list 1 contains something then we have to notify the interpreter with that value
+		  //the function annotation needs to have also a parameter in order to know which parameter to be send to
+		  //the interpreter
+		  
+		  //if list 2 contains something that we need to set that variable to confidential or sensitive
+		
+		 
+		
+		//the best approach is to create a list with all the symbolic variables which are created in the exec()
+		//the list should contain the variable and the index ex: method(int a, int b, int c) which one it is in the list
+		//by having these thing it is easier to do the annotation with the things provided from @ or $
+		
+		//the SymFunctionCall all ready contains the list of parameters and the name of the function
+		
