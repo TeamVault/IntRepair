@@ -111,30 +111,38 @@ bug was detected with the type of repair which should be applied.
 * tba, www: tba
 
 # Research Papers
+
+* Paul Muntean, Martin Monperrus, Hao Sun, Jens Grossklags and Claudia Eckert, "[IntRepair: Informed Repairing of Integer Overflows](http://arxiv.org/pdf/1807.05092)", In IEEE Transactions on Software Engineering, 2019. 
+
+```
+@article{arXiv-1807.05092,
+ title = {IntRepair: Informed Repairing of Integer Overflows},
+ journal = {IEEE Transactions on Software Engineering},
+ year = {2019},
+ doi = {10.1109/tse.2019.2946148},
+ author = {Paul Muntean and Martin Monperrus and Hao Sun and Jens Grossklags and Claudia Eckert},
+ url = {http://arxiv.org/pdf/1807.05092},
+}
+```
+
 * P. Muntean, M. Rahman, A. Ibing, and C. Eckert. SMT-Constrained Symbolic Execution Engine for Integer Overflow Detection in C Code. In International Information Security South Africa Conference (ISSA), Johannesburg, South Africa, August 2015. IEEE Computer Society.
 
+```
 @conference{364,
-
   author = {Muntean, Paul and Rahman, Mustafizur, and Ibing, Andreas and Eckert, Claudia},
-  
   title = {SMT-Constrained Symbolic Execution Engine for Integer Overflow Detection in C Code},
-  
   booktitle = {International Information Security South Africa Conference (ISSA), Johannesburg, South Africa},
-  
   year = {2015},{enter}
-  
   publisher = {IEEE Computer Society},
-  
   month = aug,
-  
   url = {https://www.sec.in.tum.de/assets/staff/muntean/issa2015.pdf}
-  
 }
-
+```
 
 * P. Muntean, V. Kommanapalli, A. Ibing, and C. Eckert. Automated Generation of Buffer Overflows Quick Fixes using Symbolic Execution and SMT. In International Conference on Computer Safety, Reliability & Security (SAFECOMP), Delft, The Netherlands, September 2015. Springer LNCS.
 
-@conference{358,
+```
+* @conference{358,
 
   author = {Muntean, Paul and Kommanapalli, Vasantha, and Ibing, Andreas and Eckert, Claudia},
   
@@ -151,10 +159,11 @@ bug was detected with the type of repair which should be applied.
   url = {https://www.sec.in.tum.de/assets/staff/muntean/safecomp15.pdf}
   
 }
-
+```
 
 * P. Muntean, A. Rabbi, A. Ibing, C. Eckert, Automated Detection of Information Flow Vulnerabilities in UML State Charts and C Code. In QRS Companion 2015.
 
+```
 @conference{361,
 
   author = {Muntean, Paul and Rabbi, Adnan and Ibing, Andreas and Eckert, Claudia},
@@ -172,10 +181,11 @@ bug was detected with the type of repair which should be applied.
   url = {https://www.sec.in.tum.de/assets/staff/muntean/MVV_Automated_Detection_of_Information_Flow0AVulnerabilities_in_UML_State_Charts_and_C_Code.pdf}
   
 }
-
+```
 
 * P. Muntean, C. Eckert, A. Ibing, Context-sensitive detection of information exposure bugs with symbolic execution. In InnoSWDev@SIGSOFT FSE Workshop, 2014.
 
+```
 @conference{340,
   author = {Muntean, Paul and Eckert, Claudia and Ibing, Andreas},
   
@@ -192,10 +202,12 @@ bug was detected with the type of repair which should be applied.
   url = {https://www.sec.in.tum.de/assets/staff/muntean/InnoSWDev_14_Context-Sensitive_Detection_of_Information_Exposure_Bugs_with_Symbolic_Execution.pdf}
 
 }
+```
 
 
 * A. Ibing, SMT-Constrained Symbolic Execution for Eclipse CDT/Codan. In SEFM Workshops 2013.
 
+```
 @inproceedings{DBLP:dblp_conf/sefm/Ibing13,
 
    author              = {Andreas Ibing},
@@ -213,10 +225,11 @@ bug was detected with the type of repair which should be applied.
    crossref            = {2013},
    
 }
-
+```
 
 * A. Ibing, Parallel SMT-Constrained Symbolic Execution for Eclipse CDT/Codan. In ICTSS 2013.
 
+```
 @inproceedings{conf/pts/Ibing13,
 
   added-at = {2013-11-26T00:00:00.000+0100},
@@ -257,10 +270,11 @@ bug was detected with the type of repair which should be applied.
   year = 2013
   
 }
-
+```
 
 * A. Ibing, Path-Sensitive Race Detection with Partial Order Reduced Symbolic Execution. In SEFM Workshops 2014.
 
+```
 @inproceedings{DBLP:dblp_conf/sefm/Ibing14,
    
    author              = {Andreas Ibing},
@@ -278,10 +292,11 @@ bug was detected with the type of repair which should be applied.
    crossref            = {2014},
    
 }
-
+```
 
 * A. Ibing, Alexandra Mai, A Fixed-Point Algorithm for Automated Static Detection of Infinite Loops. In HASE 2015.
 
+```
 @inproceedings{404,
 
   author = {A. Ibing and A. Mai},
@@ -297,10 +312,11 @@ bug was detected with the type of repair which should be applied.
   url = {https://www.sec.in.tum.de/assets/Uploads/ibing15infloops.pdf}
   
 }
-
+```
 
 * A. Ibing, Architecture description language based retargetable symbolic execution. In DATE 2015.
 
+```
 @inproceedings{DBLP:dblp_conf/date/Ibing15,
 
    author              = {Andreas Ibing},
@@ -318,10 +334,11 @@ bug was detected with the type of repair which should be applied.
    crossref            = {2015},
    
 }
-
+```
 
 * A. Ibing, Efficient Data-Race Detection with Dynamic Symbolic Execution. In FedCSIS 2016.
 
+```
 @inproceedings{435,
   
   author = {A. Ibing},
@@ -341,6 +358,7 @@ bug was detected with the type of repair which should be applied.
 
 * A. Ibing, Julian Kirsch, Lorenz Panny, Autocorrelation-Based Detection of Infinite Loops at Runtime. In DASC/PiCom/DataCom/CyberSciTech 2016.
 
+```
 @inproceedings{433,
 
   author = {A. Ibing and J. Kirsch and L. Panny},
@@ -356,7 +374,7 @@ bug was detected with the type of repair which should be applied.
   url = {https://www.sec.in.tum.de/assets/Uploads/dynloops.pdf}
   
 }
-
+```
 # License
 MIT License
 
