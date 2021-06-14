@@ -9,8 +9,8 @@ Smtcodan uses a satisfiable modulo theories (SMT) solver. Currently we use the z
 instance in order to check for different types of bugs.  The engine contains at this moment of development 5 branches, master, infoFlowChecker, IntegerFlowCheckerQuickFixes, BugLoc and extended. The integer overflow checker along with the repair generation functionality is contained in the IntegerFlowCheckerQuickFixes branch. See underneath for the particular branch description.
 
 ## Publication
-https://ieeexplore.ieee.org/abstract/document/8862860 or
-https://www.in.tum.de/fileadmin/w00bws/cybertrust/papers/2019-TSE-Muntean.pdf
+* https://ieeexplore.ieee.org/abstract/document/8862860 or
+* https://www.in.tum.de/fileadmin/w00bws/cybertrust/papers/2019-TSE-Muntean.pdf
 
 # Demo Movies
 * Detection of Integer Overflows in C/C++ Source Code
