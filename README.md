@@ -1,6 +1,5 @@
-# smtcodan-engine
-The smtcodan-engine is a symbolic execution engine
-for C/C++ code. 
+# About 
+This is the GitHub repository of smtcodan-engine symbolic execution engine. This can be used to analyze C/C++ source code. 
 It is build on top of the Elcipse CDT Codan engine.
 See here: https://wiki.eclipse.org/CDT/designs/StaticAnalysis and here: http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.ptp.pldt.doc.user%2Fhtml%2Fcodan.html
 for more details.
@@ -15,10 +14,14 @@ with the repair generation functionality is contained in the IntegerFlowCheckerQ
 description.
 
 # Demo Movies
-* __Detection of Integer Overflows in C/C++ Code__: https://goo.gl/EqNKCD
-* __Repair of Integer Overflows in C/C++ Code__: https://goo.gl/D4NPp6
+* Detection of Integer Overflows in C/C++ Source Code
+  [![pic5.png](https://i.postimg.cc/8zH2jbPQ/pic5.png)](https://goo.gl/EqNKCD)
 
-# Branches
+* Repair of Integer Overflows in C/C++ Source Code 
+  [![pic6.png](https://i.postimg.cc/Y91fCdMQ/pic6.png)](https://goo.gl/D4NPp6)
+
+
+# Source Code Branches
 * __master__:contains the integer overflow checker, and the integer overflow checker quick-fix functionality.
 see Video: https://www.youtube.com/watch?v=4iAYxea7cZo
 
