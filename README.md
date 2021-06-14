@@ -1,17 +1,16 @@
 # About 
-This is the GitHub repository of smtcodan-engine symbolic execution engine. This can be used to analyze C/C++ source code. 
-It is build on top of the Elcipse CDT Codan engine.
-See here: https://wiki.eclipse.org/CDT/designs/StaticAnalysis and here: http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.ptp.pldt.doc.user%2Fhtml%2Fcodan.html
-for more details.
+This is the GitHub repository of smtcodan-engine symbolic execution engine. This can be used to analyze C/C++ source code. It is build on top of the Elcipse CDT Codan engine.
+See here, for more details.
+* https://wiki.eclipse.org/CDT/designs/StaticAnalysis 
+* http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.ptp.pldt.doc.user%2Fhtml%2Fcodan.html
 
-Smtcodan uses a satisfiable modulo theories (SMT) solver. Currently we use the z3 solver from Microsoft
-Research but also other solvers can be used. Each checker attached to the engine checks the generated constrains 
-along the analyzed execution path.
-The engine is developed as an Eclipse plug-in and can be deployed in another Eclipse CDT
-instance in order to check for different types of bugs.  The engine contains at this moment of development
-5 branches, master, infoFlowChecker, IntegerFlowCheckerQuickFixes, BugLoc and extended. The integer overflow checker along 
-with the repair generation functionality is contained in the IntegerFlowCheckerQuickFixes branch. See underneath for the particular branch 
-description.
+
+Smtcodan uses a satisfiable modulo theories (SMT) solver. Currently we use the z3 solver from Microsoft Research but also other solvers can be used. Each checker attached to the engine checks the generated constrains along the analyzed execution path. The engine is developed as an Eclipse plug-in and can be deployed in another Eclipse CDT
+instance in order to check for different types of bugs.  The engine contains at this moment of development 5 branches, master, infoFlowChecker, IntegerFlowCheckerQuickFixes, BugLoc and extended. The integer overflow checker along with the repair generation functionality is contained in the IntegerFlowCheckerQuickFixes branch. See underneath for the particular branch description.
+
+## Publication
+https://ieeexplore.ieee.org/abstract/document/8862860 or
+https://www.in.tum.de/fileadmin/w00bws/cybertrust/papers/2019-TSE-Muntean.pdf
 
 # Demo Movies
 * Detection of Integer Overflows in C/C++ Source Code
